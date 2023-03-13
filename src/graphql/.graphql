@@ -1,0 +1,18 @@
+query getUList {
+    
+        driverMeta{
+          id
+          name
+          controllerMeta {
+            id
+            model
+          }
+          asSsdBenchmark {
+            name
+            recordValue {
+              id
+            }
+          }
+        }
+      
+}

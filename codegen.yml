@@ -1,0 +1,17 @@
+overwrite: true
+schema:
+  - http://alley.luobotou.org:8585/graphql
+documents: 'src/graphql/.graphql'
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-urql
+    config:
+      urqlImportFrom: '@urql/vue'
+      skipTypename: false
+  src/generated/graphql.schema.json:
+    plugins:
+      - introspection
+
