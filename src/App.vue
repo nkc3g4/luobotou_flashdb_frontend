@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import gql from 'graphql-tag';
 import HelloWorld from './components/HelloWorld.vue'
 import { useGetUListQuery } from './generated/graphql';
-const res = useGetUListQuery();
-console.log(res.executeQuery());
+const query = useGetUListQuery();
+query.then(x=>{
+  console.log(x.data.value?.driverMeta);
+})
+
 </script>
 
 <template>
